@@ -1,0 +1,70 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#card{
+    min-width: 25%;
+}
+
+.add-button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    position: fixed;
+    bottom: 10%;
+    left: 85%;
+    box-shadow: 2px 2px 2px black;
+    transition: all 0.5s;
+}
+.add-button:active{
+    transform: translateY(-10px);
+}
+.overlay{
+    background-color: black;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: none;
+}
+.popupbox{
+    min-width:50%;
+    position: absolute;
+    top:100px;
+    left: 100px;
+    padding: 50px;
+    border-radius: 10px;
+    z-index: 2;
+    display: none;
+}
+
+.popupbox input{
+    background: transparent;
+    border: none;
+    width: 100%;
+    margin: 8px;
+    padding: 5px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid black;
+}
+.popupbox input::placeholder,textarea::placeholder{
+    color: black;
+}
+.popupbox input:focus ,textarea:focus{
+    border: none;
+    outline: none;
+}
+.popupbox textarea{
+    background: transparent;
+    border: none;
+    width: 100%;
+    margin: 8px;
+    padding: 5px;
+    font-size: 1.5rem;
+    border: 2px solid black;
+}
