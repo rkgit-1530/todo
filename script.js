@@ -39,7 +39,7 @@ detailsForm.addEventListener("submit", function (event) {
     header.setAttribute('class', 'card-header h2 text-center')
     footer.setAttribute('class', 'card-body')
     p.setAttribute('class', 'card-text')
-    button.setAttribute('class', 'btn btn-danger');
+    button.setAttribute('class', 'btn btn-dark');
     button.setAttribute('id', 'deleteCard')
 
     button.innerText = 'delete'
