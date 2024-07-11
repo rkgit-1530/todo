@@ -5,6 +5,8 @@
 }
 #card{
     min-width: 25%;
+    width: 18rem;
+     margin: 50px;
 }
 
 .add-button{

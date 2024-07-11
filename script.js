@@ -1,35 +1,77 @@
 // selecting popupbox,overlay,addbutton
-var popupbox=document.querySelector(".popupbox")
-var overlay=document.querySelector(".overlay")
-var add=document.getElementById("add")
-var cancel=document.getElementById("Cancel")
-var container=document.querySelector(".container")
-var addtodo=document.getElementById("Addtodo")
-var title=document.getElementById("Title")
-var details=document.getElementById("Todo")
+var popupbox = document.querySelector(".popupbox")
+var overlay = document.querySelector(".overlay")
+var add = document.getElementById("add")
+var cancel = document.getElementById("Cancel")
+var container = document.querySelector("#cardBox")
+var addtodo = document.getElementById("Addtodo")
 
-add.addEventListener("click",function(){
-    popupbox.style.display="block"
-    overlay.style.display="block"
+const detailsForm = document.querySelector('#detailForm');
+const cards = document.querySelectorAll('#card');
+const deleteButtons = document.querySelectorAll('#deleteCard')
+
+
+add.addEventListener("click", function () {
+    popupbox.style.display = "block"
+    overlay.style.display = "block"
 })
 
-cancel.addEventListener("click",function(){
-    event.preventDefault()
-    popupbox.style.display="none"
-    overlay.style.display="none"
+cancel.addEventListener("click", function () {
+    popupbox.style.display = "none"
+    overlay.style.display = "none"
 })
 
-addtodo.addEventListener("click",function(){
+
+
+detailsForm.addEventListener("submit", function (event) {
     event.preventDefault()
-    var div=document.createElement("div")
-    div.setAttribute("class","popupbox bg-success mb-3")
-    div.innerHTML=
-    `<header>${title.value}</header>
-     <footer>${details.value}</p>
-     <a href=""> <i class="bi bi-trash3-fill"></i>&nbsp;delete<a>
-     </footer>`
+    var title = document.getElementById("Title")
+    var details = document.getElementById("Todo");
+
+    const div = document.createElement("div");
+    const header = document.createElement('header');
+    const footer = document.createElement('footer');
+    const p = document.createElement('p')
+    const button = document.createElement('button');
+
+    div.setAttribute('class', 'card text-bg-success mb-3');
+    div.setAttribute('id', 'card')
+    header.setAttribute('class', 'card-header h2 text-center')
+    footer.setAttribute('class', 'card-body')
+    p.setAttribute('class', 'card-text')
+    button.setAttribute('class', 'btn btn-danger');
+    button.setAttribute('id', 'deleteCard')
+
+    button.innerText = 'delete'
+    header.innerHTML = title.value;
+    p.innerHTML = details.value;
+    title.value = '';
+    details.value = '';
+
+    button.addEventListener('click', function () {
+        div.remove();
+    })
+
+
+    footer.append(p);
+    footer.append(button);
+
+    div.append(header);
+    div.append(footer);
+
     container.append(div)
-    popupbox.style.display="none"
-    overlay.style.display="none"
-
+    popupbox.style.display = "none"
+    overlay.style.display = "none"
 })
+
+
+deleteButtons.forEach((btn, index) => {
+    btn.addEventListener('click', function () {
+        cards[index].remove();
+    })
+})
+
+
+
+
+
