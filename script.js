@@ -42,7 +42,7 @@ detailsForm.addEventListener("submit", function (event) {
     button.setAttribute('class', 'btn btn-dark');
     button.setAttribute('id', 'deleteCard')
 
-    button.innerText = 'r&nbsp;delete'
+    button.innerText = <i class="bi bi-trash"></i>'delete'
     header.innerHTML = title.value;
     p.innerHTML = details.value;
     title.value = '';
