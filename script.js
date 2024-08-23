@@ -36,13 +36,13 @@ detailsForm.addEventListener("submit", function (event) {
 
     div.setAttribute('class', 'card text-bg-success mb-3');
     div.setAttribute('id', 'card');
-    header.setAttribute('class', 'card-header h2 text-center');
+    header.setAttribute('class', 'card-header h2 text-center text-dark font-weight-bold');
     footer.setAttribute('class', 'card-body');
-    p.setAttribute('class', 'card-text');
-    button.setAttribute('class', 'btn btn-dark');
+    p.setAttribute('class', 'card-text text-dark h5 mb-3');
+    button.setAttribute('class', 'btn bg-transparent border-dark');
     button.setAttribute('id', 'deleteCard');
 
-    button.innerText = <i class="bi bi-trash"></i>'delete';
+    button.innerText = 'Delete';
     header.innerHTML = title.value;
     p.innerHTML = details.value;
     title.value = '';
