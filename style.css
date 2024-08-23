@@ -70,3 +70,8 @@
     font-size: 1.5rem;
     border: 2px solid black;
 }
+@media only screen and (max-width: 600px) {
+    #popupbox{
+        margin-right: 90px;
+    }
+  }
