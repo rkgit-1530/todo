@@ -1,3 +1,7 @@
+
+*{
+font-family: poppins;
+}
 .container{
     display: flex;
     flex-direction: row;
@@ -35,7 +39,7 @@
     display: none;
 }
 .popupbox{
-    min-width:50%;
+    min-width:70%;
     position: absolute;
     top:100px;
     left: 100px;
@@ -70,8 +74,15 @@
     font-size: 1.5rem;
     border: 2px solid black;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 774px) {
     #popupbox{
-        margin-right: 90px;
+        position: absolute;
+        border-radius: 0;
+        left: 0;
+        width: 100vw;
     }
+    .add-button{
+        left: 75%;
+    }
+
   }
